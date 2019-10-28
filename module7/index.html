@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>First Mobile Example</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="apple-touch-icon" href="home.png">
+<link rel="apple-touch-icon" sizes="76x76" href="home.png">
+<link rel="apple-touch-icon" sizes="120x120" href="home.png">
+<link rel="apple-touch-icon" sizes="152x152" href="home.png">
+<link rel="stylesheet" href="themes/ctheme1.css">
+
+</head>
+
+<body>
+  <!-- Benjamin Cook
+     assignment?.html
+     INFO2439
+     Thoendel
+     9/4/2019
+-->
+<!--Please help me I am so confused and have no idea what I am doing-->
+
+  <div data-role="page" id="third">
+
+    <div data-role="header">
+      <a data-ajax="false" href="../index.html" data-icon="home" rel="external">Home</a>
+      <h1><img src="hoem.png" height="70" width="70"><br>Home</h1>
+    </div>
+
+    <div role="main" class="ui-content">
+
+      <ul id="theList" data-role="listview" data-inset="true">
+
+      </ul>
+
+      <form>
+        <div data-role="fieldcontain">
+          <label for="additemList">Add List Item</label>
+          <input type="text" name="additemList" id="additemList" value="" />
+        </div>
+
+        <div data-role="fieldcontain">
+          <label for="additemAddress">New Address</label>
+          <input type="text" name="additemAddress" id="additemAddress" value="" />
+        </div>
+        <input type="button" id="testBtn" value="Add It">
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    $("#testBtn").click(function () {
+      var itemToAdd = $.trim($("#additemList").val());
+      if (itemToAdd == "") return;
+      $("#theList").append("<li>" + itemToAdd + "</li>");
+      $("#theList").listview("refresh");
+    });
+    $("#testBtn").click(function () {
+      var itemToAdd = $.trim($("#additemAddress").val());
+      if (itemToAdd == "") return;
+      $("#theList").append("<li>" + itemToAdd + "</li>");
+      $("#theList").listview("refresh");
+    });
+  </script>
+
+</body>
+</body>
+
+</html>
